@@ -1,12 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project Battleship", "Project Battleship.csproj", "{4E7D12AC-C307-28E8-DB0A-6C96EA654353}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E7D12AC-C307-28E8-DB0A-6C96EA654353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E7D12AC-C307-28E8-DB0A-6C96EA654353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E7D12AC-C307-28E8-DB0A-6C96EA654353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E7D12AC-C307-28E8-DB0A-6C96EA654353}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
