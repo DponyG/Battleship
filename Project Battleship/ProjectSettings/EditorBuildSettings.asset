@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/BattleShip.unity
+    guid: 512e7187bf1fb3b45b39f9b399cbe3b3
+  - enabled: 1
+    path: Assets/fireScene.unity
+    guid: 28986fa47354ea8479145a5511d7fc4c
