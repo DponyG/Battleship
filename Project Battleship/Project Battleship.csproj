@@ -294,9 +294,11 @@
     <Compile Include="Assets\Scripts\FireGrid.cs" />
     <Compile Include="Assets\Scripts\FloatScript.cs" />
     <Compile Include="Assets\Scripts\Grid.cs" />
+    <Compile Include="Assets\Scripts\MisslePath.cs" />
     <Compile Include="Assets\Scripts\MoveCube.cs" />
     <Compile Include="Assets\Scripts\Window.cs" />
     <Compile Include="Assets\Scripts\WindowExample.cs" />
+    <Compile Include="Assets\SetPosition.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Lowpoly paper boats\doc\readme.txt" />

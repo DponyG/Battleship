@@ -10,8 +10,8 @@ public class FireGridTest {
 
     [Test]
     public void FireGridTestSimplePasses() {
-        string[] arr = new string[] { "A1", "B1" };
-        CreateKVP test = new CreateKVP(arr);
+        string testString = "A1";
+        CreateKVP test = new CreateKVP(testString);
         Dictionary<string, Vector3> testKVP = test.GetKVP();
         var value = testKVP["A1"];
         var value1 = testKVP["B1"];
