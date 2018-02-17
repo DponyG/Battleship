@@ -30,8 +30,10 @@ public class FireGrid : MonoBehaviour {
         selGridInt = GUILayout.SelectionGrid(selGridInt, selStrings, 6, GUILayout.Width(200));
         if (GUILayout.Button("FIRE", GUILayout.Width(50)))
             // Debug.Log("You chose " + selStrings[selGridInt]);
-
             SceneManager.LoadScene("fireScene");
+        if (GUILayout.Button("TEST", GUILayout.Width(50)))
+            // Debug.Log("You chose " + selStrings[selGridInt]);
+            SceneManager.LoadScene("BattleShip");
         GUILayout.EndArea();
         CreateKVP kvp = new CreateKVP(selStrings[selGridInt]);
 
