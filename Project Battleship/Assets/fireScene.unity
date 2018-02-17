@@ -135,6 +135,18 @@ MonoBehaviour:
   clone: {fileID: 4607299688584790, guid: 4aacd75fa49868b4d9a9521458c15e78, type: 2}
   target: {fileID: 4607299688584790, guid: 4aacd75fa49868b4d9a9521458c15e78, type: 2}
   speed: 10
+--- !u!114 &224953088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 224953085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0c566308c3bb474aa4b47f6aa4264f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHit: 0
 --- !u!136 &224953090
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -362,22 +374,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 471cb86683690f349b026ba6e71ade8c, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1114116295 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1574690951528852, guid: 7d933761ced93f14fa5ad1156bbb6b6b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1662334501}
---- !u!114 &1114116302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1114116295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 634096e127ba378479b070a8b56264a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1174945707
 Prefab:
   m_ObjectHideFlags: 0
@@ -641,6 +637,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1527741265809706, guid: c7ddbf428322ed34595b83004513ef48, type: 2}
+      propertyPath: m_Name
+      value: cpuPerl
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114196711410412018, guid: c7ddbf428322ed34595b83004513ef48, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c7ddbf428322ed34595b83004513ef48, type: 2}
   m_IsPrefabParent: 0

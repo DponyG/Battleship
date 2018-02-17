@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using System;
 
 
 public class CreateKVP  {
@@ -23,13 +24,18 @@ public class CreateKVP  {
        
         var result = Regex.Replace(selString, @"\D", "");
         var parse = System.Int32.Parse(result);
-
+        
+        
         if (selString.Trim().StartsWith("A")) {
             kvp.Add(selString, new Vector3(10.0f, 0.0f, parse*10.0f));
         }
 
         if (selString.Trim().StartsWith("B")) {
-            kvp.Add(selString, new Vector3(20.0f, 0.0f, parse*10.0f));
+            kvp.Add(selString, new Vector3(50.0f, 0.0f, parse*10.0f));
+        }
+
+        if (selString.Trim().StartsWith("C")) {
+            kvp.Add(selString, new Vector3(0.0f, -1000.0f, 0.0f));
         }
 
 
