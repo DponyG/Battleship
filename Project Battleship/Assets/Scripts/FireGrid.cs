@@ -16,6 +16,7 @@ public class FireGrid : MonoBehaviour {
         if (Persistance.friendly.selStrings[selGridInt]!= "X" && Persistance.friendly.selStrings[selGridInt] != "0") {
             CreateKVP kvp = new CreateKVP(Persistance.friendly.selStrings[selGridInt]);
             Persistance.friendly.coord = kvp.GetKVP()[Persistance.friendly.selStrings[selGridInt]]; //This sets the coord = to the item selected in the gui
+            Persistance.friendly.index = selGridInt;
             if (GUILayout.Button("FIRE", GUILayout.Width(50))) {
                 SceneManager.LoadScene("fireScene");
             }

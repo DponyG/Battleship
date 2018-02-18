@@ -1,6 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MisslePath : MonoBehaviour {
 
@@ -19,6 +19,8 @@ public class MisslePath : MonoBehaviour {
      print(Persistance.friendly.coord);
      float step = speed * Time.deltaTime;
      transform.position = Vector3.MoveTowards(transform.position, clone.position, step);
+
+        
     }
 
 }

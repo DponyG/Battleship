@@ -12,12 +12,20 @@ public class ColliderScript : MonoBehaviour {
     const string hit = "X";
     const string missed = "O";
     void OnCollisionEnter(Collision col) {
-        if (col.gameObject.name == "cpuPerl") {
+        if (col.gameObject.name == "cpuPerl" || col.gameObject.name == "cpuFang") {
             Instantiate(explosion, transform.position, transform.rotation);
             Destroy(col.gameObject);
+            isHit = true;
+        }
+
+        if (isHit) {
+            Persistance.friendly.UpdateString(hit);
+        } else {
+            Persistance.friendly.UpdateString(missed);
         }
 
         Destroy(this.gameObject);
+
     }
 }
 
