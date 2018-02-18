@@ -141,44 +141,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selGridInt: 0
-  selStrings:
-  - A1
-  - B1
-  - C1
-  - D1
-  - E1
-  - F1
-  - A2
-  - B2
-  - C2
-  - D2
-  - E2
-  - F2
-  - A3
-  - B3
-  - C3
-  - D3
-  - E3
-  - F3
-  - A4
-  - B4
-  - C4
-  - D4
-  - E4
-  - F4
-  - A5
-  - B5
-  - C5
-  - D5
-  - E5
-  - F5
-  - A6
-  - B6
-  - C6
-  - D6
-  - E6
-  - F6
-  - X
 --- !u!4 &212766115
 Transform:
   m_ObjectHideFlags: 0
@@ -414,9 +376,48 @@ MonoBehaviour:
   m_GameObject: {fileID: 1172176842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2511441e7bd4974d847a62c23ba5180, type: 3}
+  m_Script: {fileID: 11500000, guid: 325c1fc55a5fc0c43b453f0e15b0658f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coord: {x: 0, y: 0, z: 0}
+  selStrings:
+  - A1
+  - B1
+  - C1
+  - D1
+  - E1
+  - F1
+  - A2
+  - B2
+  - C2
+  - D2
+  - E2
+  - F2
+  - A3
+  - B3
+  - C3
+  - D3
+  - E3
+  - F3
+  - A4
+  - B4
+  - C4
+  - D4
+  - E4
+  - F4
+  - A5
+  - B5
+  - C5
+  - D5
+  - E5
+  - F5
+  - A6
+  - B6
+  - C6
+  - D6
+  - E6
+  - F6
+  - X
 --- !u!4 &1172176844
 Transform:
   m_ObjectHideFlags: 0

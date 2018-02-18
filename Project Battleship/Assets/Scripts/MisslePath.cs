@@ -9,19 +9,14 @@ public class MisslePath : MonoBehaviour {
     public float speed;
     void Start() {
 
-    clone = Instantiate(target, FireGrid.control.GetCoord(), Quaternion.identity);
-    print(FireGrid.control.GetCoord());
+    clone = Instantiate(target, Persistance.friendly.coord, Quaternion.identity);
+    print(Persistance.friendly.coord);
         
 
     }
     void Update() {
-
-
-
-      
-
      print(clone.position);
-     print(FireGrid.control.GetCoord());
+     print(Persistance.friendly.coord);
      float step = speed * Time.deltaTime;
      transform.position = Vector3.MoveTowards(transform.position, clone.position, step);
     }

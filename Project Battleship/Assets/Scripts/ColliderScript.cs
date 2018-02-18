@@ -6,23 +6,21 @@ using UnityEngine;
 //object. It checks to see if the object collided is a gameobject
 //and if so destroys it.
 public class ColliderScript : MonoBehaviour {
+    public GameObject explosion;
 
     public bool isHit = false;
     const string hit = "X";
     const string missed = "O";
     void OnCollisionEnter(Collision col) {
         if (col.gameObject.name == "cpuPerl") {
-            print("hit");
+            Instantiate(explosion, transform.position, transform.rotation);
+            Destroy(col.gameObject);
         }
 
-        //if (isHit) {
-        //    FireGrid.control.SetMarker(hit);
-        //} else
-        //    FireGrid.control.SetMarker(missed);
-
-        // Destroy(this.gameObject);
+        Destroy(this.gameObject);
     }
 }
+
 
 
 

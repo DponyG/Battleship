@@ -6,7 +6,7 @@ public class SetPosition : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        transform.position = FireGrid.control.GetCoord();
+       // transform.position = FireGrid.control.GetCoord();
 	}
 	
 	// Update is called once per frame

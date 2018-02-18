@@ -19,27 +19,30 @@ public class CreateKVP  {
    public float xB = 10.0f;
    public float zB = 10.0f;
 
+    
+
     public CreateKVP(string selString) {
 
        
         var result = Regex.Replace(selString, @"\D", "");
-        var parse = System.Int32.Parse(result);
-        
-        
-        if (selString.Trim().StartsWith("A")) {
-            kvp.Add(selString, new Vector3(10.0f, 0.0f, parse*10.0f));
+        var number = 0;
+        bool attemptParse = System.Int32.TryParse(result, out number);
+
+        if (attemptParse) {
+            number = System.Int32.Parse(result);
+            Console.WriteLine(number);
+            if (selString.Trim().StartsWith("A")) {
+                kvp.Add(selString, new Vector3(10.0f, 0.0f,  (number+1)*10.0f));
+            }
+
+            if (selString.Trim().StartsWith("B")) {
+                kvp.Add(selString, new Vector3(20.0f, 0.0f, (number+1)*10.0f));
+            }
+
+            if (selString.Trim().StartsWith("C")) {
+                kvp.Add(selString, new Vector3(0.0f, -1000.0f, 0.0f));
+            }
         }
-
-        if (selString.Trim().StartsWith("B")) {
-            kvp.Add(selString, new Vector3(50.0f, 0.0f, parse*10.0f));
-        }
-
-        if (selString.Trim().StartsWith("C")) {
-            kvp.Add(selString, new Vector3(0.0f, -1000.0f, 0.0f));
-        }
-
-
-
 
     }
 
@@ -50,12 +53,7 @@ public class CreateKVP  {
         
 
     public Dictionary<string, Vector3> kvp = new Dictionary<string, Vector3>();
-    //public string[] selStrings = new string[] { "A1", "A2", "A3", "A4" ,"A5", "A6",
-    //"B1", "B2", "B3", "B4","B5" };
-    //public Vector3[] setVector = new Vector3[] { new Vector3(0.0f, 0.0f, 0.0f),
-    //new Vector3(10.0f, 0.0f, 0.0f), new Vector3(20.0f, 0.0f, 0.0f)};
-   
-
+  
 
 }
 

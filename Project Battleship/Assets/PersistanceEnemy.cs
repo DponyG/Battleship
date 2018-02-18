@@ -22,6 +22,7 @@ public class PersistanceEnemy : MonoBehaviour {
         }
     }
 
+
     //Start Function Instantiates all objects.
     void Start() {
         Peral cpuPeral = new Peral();
