@@ -1,28 +1,35 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿
 
 //Boats class. That uses inheritance. All Boats have a int value 
 //and a isDestroyed
 public class Boats {
 
-    public int hp = 1; 
-    public bool isDestroyed;
+   private int hp = 0;
+   private bool isDestroyed = false;
 
    virtual public int GetInt() {
         return 0 ;
     }
 
-    virtual public bool GetStatus() {
+   virtual public bool GetStatus() {
+        if(hp == 0) {
+            isDestroyed = true;
+        }
         return isDestroyed;
     }
+
+   virtual public void TakeDamage() {
+        hp--;
+   } 
 	
 }
 
 //This is the Peral boat which is the longest of the boats
 //It has an hp value of 3;
 public class Peral : Boats {
-  //  hp = 3;
+
+    private int hp = 1;
+
     bool isDestroyed = false;
 
     public override int GetInt() {
@@ -30,15 +37,24 @@ public class Peral : Boats {
     }
 
     public override bool GetStatus() {
+        if (hp == 0) {
+            isDestroyed = true;
+        }
         return isDestroyed;
     }
+
+    public override void TakeDamage() {
+        hp--;
+    }
+
 
 }
 
 //This is the Peral boat which is the longest of the boats
 //It has an hp value of 3;
 public class Fang : Boats {
-  //  hp = 2;
+    private int hp = 1;
+
     bool isDestroyed = false;
 
     public override int GetInt() {
@@ -47,7 +63,14 @@ public class Fang : Boats {
     }
 
     public override bool GetStatus() {
+        if (hp == 0) {
+            isDestroyed = true;
+        }
         return isDestroyed;
+    }
+
+    public override void TakeDamage() {
+        hp--;
     }
 
 }

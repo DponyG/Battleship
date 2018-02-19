@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 //This is a ColliderScript and should be attatched to the missle
@@ -12,22 +11,31 @@ public class ColliderScript : MonoBehaviour {
     const string hit = "X";
     const string missed = "O";
     void OnCollisionEnter(Collision col) {
-        if (col.gameObject.name == "cpuPerl" || col.gameObject.name == "cpuFang") {
+        if (col.gameObject.name == "cpuPerl") {
             Instantiate(explosion, transform.position, transform.rotation);
             Destroy(col.gameObject);
             isHit = true;
+            Persistance.perData.cpuPeral.TakeDamage();
+
         }
 
         if (isHit) {
-            Persistance.friendly.UpdateString(hit);
-        } else {
-            Persistance.friendly.UpdateString(missed);
+            Persistance.perData.UpdateString(hit);
         }
+
 
         Destroy(this.gameObject);
 
     }
+
+    void Update() {
+        if (!isHit && Time.timeSinceLevelLoad > 4) {
+            Persistance.perData.UpdateString(missed);
+        }
+    }
 }
+
+
 
 
 

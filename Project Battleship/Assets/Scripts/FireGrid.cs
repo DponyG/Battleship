@@ -10,20 +10,17 @@ public class FireGrid : MonoBehaviour {
    
     
     void OnGUI() {
-        GUILayout.BeginArea(new Rect(20, 100, 1000, 1000));
+        GUILayout.BeginArea(new Rect(20, 100, 2000, 2000));
 
-        selGridInt = GUILayout.SelectionGrid(selGridInt, Persistance.friendly.selStrings, 6, GUILayout.Width(200));
-        if (Persistance.friendly.selStrings[selGridInt]!= "X" && Persistance.friendly.selStrings[selGridInt] != "0") {
-            CreateKVP kvp = new CreateKVP(Persistance.friendly.selStrings[selGridInt]);
-            Persistance.friendly.coord = kvp.GetKVP()[Persistance.friendly.selStrings[selGridInt]]; //This sets the coord = to the item selected in the gui
-            Persistance.friendly.index = selGridInt;
+        selGridInt = GUILayout.SelectionGrid(selGridInt, Persistance.perData.selStrings, 10, GUILayout.Width(400));
+        if (Persistance.perData.selStrings[selGridInt]!= "X" && Persistance.perData.selStrings[selGridInt] != "O") {
+            CreateKVP kvp = new CreateKVP(Persistance.perData.selStrings[selGridInt]);
+            Persistance.perData.coord = kvp.GetKVP()[Persistance.perData.selStrings[selGridInt]]; //This sets the coord = to the item selected in the gui
+            Persistance.perData.index = selGridInt;
             if (GUILayout.Button("FIRE", GUILayout.Width(50))) {
                 SceneManager.LoadScene("fireScene");
             }
         }
-        if (GUILayout.Button("TEST", GUILayout.Width(50)))
-            // Debug.Log("You chose " + selStrings[selGridInt]);
-            SceneManager.LoadScene("BattleShip");
         GUILayout.EndArea();
 
     }
