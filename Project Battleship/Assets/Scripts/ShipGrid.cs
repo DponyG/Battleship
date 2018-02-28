@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -101,8 +101,12 @@ public class ShipGrid : MonoBehaviour {
     //If so placeship decements the placedship count
     //TODO clean up the if statements
     public void PlaceShip(int length, Vector3 rotation, string position, GameObject ship) {
-
+        if(position == "S"){
+            Destroy(ship);
+            return;
+        }
         int b;
+
         CreateKVP kvp = new CreateKVP();
         kvp.CreateFriendlyKVP(position);
         coord = kvp.GetValueF(position);
@@ -110,9 +114,9 @@ public class ShipGrid : MonoBehaviour {
         ship.transform.Rotate(rotation);
 
 
-        if (coord.x + length * Mathf.Cos(-rotation.y * Mathf.PI / 180) > 105.0f ||
+        if (coord.x + length * Mathf.Cos(-rotation.y * Mathf.PI / 180) > 115.0f ||
             coord.x + length * Mathf.Cos(-rotation.y * Mathf.PI / 180) < -5.0f ||
-            coord.z + length * Mathf.Sin(-rotation.y * Mathf.PI / 180) < -105.0f ||
+            coord.z + length * Mathf.Sin(-rotation.y * Mathf.PI / 180) < -115.0f ||
             coord.z + length * Mathf.Sin(-rotation.y * Mathf.PI / 180) > 5.0f) {
             Destroy(ship);
             rotate.y = 0;
@@ -121,7 +125,7 @@ public class ShipGrid : MonoBehaviour {
 
         int a = position[0] - 65;
 
-        b = Int32.Parse(position[1].ToString()) - 1;
+        b = Int32.Parse(position.Substring(1)) - 1;
 
         for (int i = 0; i < length / 10; ++i) {
             if (i == 1 && (rotation.y == 90.0f || rotation.y == 180.0f))
@@ -131,12 +135,9 @@ public class ShipGrid : MonoBehaviour {
                 rotation.y = 0;
                 return;
             }
-
-
         }
 
         a = position[0] - 65;
-
 
         for (int i = 0; i < length / 10; ++i) {
             if (i == 1 && (rotation.y == 90.0f || rotation.y == 180.0f))
@@ -154,27 +155,3 @@ public class ShipGrid : MonoBehaviour {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
