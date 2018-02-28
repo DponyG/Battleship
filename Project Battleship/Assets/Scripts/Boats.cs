@@ -26,7 +26,7 @@ public class Boats {
 
 //This is the Peral boat which is the longest of the boats
 //It has an hp value of 3;
-public class Peral : Boats {
+public class StarShip : Boats {
 
     private int hp = 1;
 
@@ -52,7 +52,7 @@ public class Peral : Boats {
 
 //This is the Peral boat which is the longest of the boats
 //It has an hp value of 3;
-public class Fang : Boats {
+public class Voyager : Boats {
     private int hp = 1;
 
     bool isDestroyed = false;

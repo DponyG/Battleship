@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - StarShip
+  - cpuStarship
+  - cpuFreighter
+  - Fire
+  - cpuCarrier
+  - urCarrier
+  - urVoyager
+  - urFreighter
+  - urStarship
+  - cpuVoyager
   layers:
   - Default
   - TransparentFX

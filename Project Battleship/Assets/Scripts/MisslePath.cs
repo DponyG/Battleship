@@ -1,26 +1,37 @@
 ﻿
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
+
+//MissilePath
+//Missile moves to the Persistance.perData.GetMissileCoord
 public class MisslePath : MonoBehaviour {
+  
 
-    public Transform clone;
-    public Transform target;
-    public float speed;
     void Start() {
-
-    clone = Instantiate(target, Persistance.perData.coord, Quaternion.identity);
-    print(Persistance.perData.coord);
-        
-
+        Persistance.perData.cpuFire = false;
     }
+  
+    public float speed;
     void Update() {
-     print(clone.position);
-     print(Persistance.perData.coord);
-     float step = speed * Time.deltaTime;
-     transform.position = Vector3.MoveTowards(transform.position, clone.position, step);
-
-        
+        float step = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, Persistance.perData.GetMissileCoord(), step);
+        if (transform.position == Persistance.perData.GetMissileCoord()) {
+            if (Persistance.IsState(Persistance.States.User)) {
+                Persistance.perData.selStrings[Persistance.perData.GetFireIndex()] = "O";
+                Persistance.ChangeState(Persistance.States.Computer);
+                Persistance.perData.cpuFire = true;
+            } else {
+                Persistance.perData.placeShips[Persistance.perData.GetShipIndex()] = "O";
+                Persistance.perData.urFire = true;
+                Persistance.ChangeState(Persistance.States.User);
+            }
+            Destroy(this.gameObject);
+        }
     }
-
 }
+
+
+
+    
+
+
