@@ -54,11 +54,11 @@ public class ShipGrid : MonoBehaviour {
 
 
         if (toggleTxt) {
-            GUILayout.BeginArea(new Rect(45, 30, 3000, 3000));
+            GUILayout.BeginArea(new Rect(0, 30, 3000, 3000));
 
 
 
-            selShipGridInt = GUILayout.SelectionGrid(selShipGridInt, Persistance.perData.placeShips, 10, GUILayout.Width(650), GUILayout.Height(600));
+            selShipGridInt = GUILayout.SelectionGrid(selShipGridInt, Persistance.perData.placeShips, 10, GUILayout.Width(300));
             if (GUILayout.Button("Rotate: " + rotate.y, GUILayout.Width(100))) {
                 rotate.y = (rotate.y + 90) % 360;
             }

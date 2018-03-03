@@ -26,14 +26,14 @@ public class FireGrid : MonoBehaviour {
     void OnGUI() {
 
 
-        toggleTxt = GUI.Toggle(new Rect(1075, 0, 100, 30), toggleTxt, "ToggleFire");
+        toggleTxt = GUI.Toggle(new Rect(1225, 0, 100, 30), toggleTxt, "ToggleFire");
       
 
         if (toggleTxt) {
 
 
-            GUILayout.BeginArea(new Rect(775, 30, 3000, 3000));
-            selGridInt = GUILayout.SelectionGrid(selGridInt, Persistance.perData.selStrings, 10, GUILayout.Width(600), GUILayout.Height(600));
+            GUILayout.BeginArea(new Rect(1225, 30, 3000, 3000));
+            selGridInt = GUILayout.SelectionGrid(selGridInt, Persistance.perData.selStrings, 10, GUILayout.Width(300));
             Persistance.perData.SetFireIndex(selGridInt);
           
             if (Persistance.perData.selStrings[selGridInt] != "X" && Persistance.perData.selStrings[selGridInt] != "O") {
